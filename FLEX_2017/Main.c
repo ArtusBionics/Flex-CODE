@@ -19,8 +19,13 @@
 // Variables
 volatile uint16_t ADC1ConvertedValue;
 volatile uint32_t TIM16_Wheel_Speed;
-volatile uint8_t Brake_Status;
+//volatile uint8_t Brake_Status;
 volatile uint8_t Temporary_Val;
+
+volatile uint8_t Button_1_Status;
+volatile uint8_t Button_2_Status;
+volatile uint8_t Button_3_Status;
+volatile uint8_t Button_4_Status;
 
 
 volatile uint16_t IC3ReadValuesss1 = 0, IC3ReadValuesss2 = 0;
@@ -49,6 +54,7 @@ void Test_ADC(void);
 void Test_BrakeSwitch(void);
 void Test_Primary_Encoder(void);
 
+void Test_Buttons(void);
 
 /**
 * @brief  Main program.
@@ -59,9 +65,8 @@ int main(void)
 {
 	ConfigureGPIO();
 	ConfigureSysTick();
-	ConfigureCAN();
 	ConfigureADC();
-    ConfigureTIM();
+  ConfigureTIM();
     //ConfigureInterrupt();
     //ConfigureEXTI17();
     //TIM_Config();
@@ -69,14 +74,14 @@ int main(void)
     // Test Code: Uncomment only one function to test that particular part
     //Test_RGBLED();
     //Test_ADC();
-    //Test_BrakeSwitch();
-    //Test_Primary_Encoder();
+    //Test_BrakeSwitch(); // Changed to Test_Buttons
+    //Test_Primary_Encoder(); //Not for us
     
     // Reset encoder counter registers
 	
 	while(1) {
         APPS_Position_1 = TIM_GetCounter(TIM2);
-        transmit_message(0x322, 0x0, 0x02, (uint64_t) APPS_Position_1);
+       // transmit_message(0x322, 0x0, 0x02, (uint64_t) APPS_Position_1);
         Delay(10);
 	}	
 }
@@ -99,15 +104,15 @@ static void TIM_Config(void)
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
   
   /* TIM1 channel 2 pin (PE.11) configuration */
-  GPIO_InitStructure.GPIO_Pin =  LEFT_WHEEL_SPEED_PIN;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
+//  GPIO_InitStructure.GPIO_Pin =  LEFT_WHEEL_SPEED_PIN;
+//  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+//  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+//  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+//  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+//  GPIO_Init(GPIOA, &GPIO_InitStructure);
 
   /* Connect TIM pins to AF2 */
-  GPIO_PinAFConfig(GPIOA, LEFT_WHEEL_PINSOURCE, GPIO_AF_2);
+//  GPIO_PinAFConfig(GPIOA, LEFT_WHEEL_PINSOURCE, GPIO_AF_2);
   
   /* TIM17 configuration: Input Capture mode ---------------------
      The external signal is connected to TIM17 CH1 pin (PA.07)  
@@ -143,10 +148,10 @@ void ConfigureEXTI17(void)
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 
   /* Configure PA0 pin as input floating */
-  GPIO_InitStructure.GPIO_Pin = LEFT_WHEEL_SPEED_PIN;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
+//	GPIO_InitStructure.GPIO_Pin = LEFT_WHEEL_SPEED_PIN;
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+//	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+//	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
   /* Enable SYSCFG clock */
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
@@ -359,6 +364,54 @@ void Test_ADC(void)
        	}
     }
 }
+/**
+    @brief      Tests each push button for hand configuration
+    @note       Button 1 					Red LED
+								Button 2					Blue LED
+								Button 3					Green LED
+    @param      None
+    @return     None
+*/
+void Test_Buttons(void) {
+	while(1)
+	{
+		Button_1_Status = GPIO_ReadInputDataBit(GPIOC, BUTTON_1);
+		Button_2_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_2);
+	  Button_3_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_3);
+		Button_4_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_4);
+		
+		if (Button_1_Status + Button_2_Status + Button_3_Status + Button_4_Status != 1) {
+			//Turn off all LEDs
+			GPIO_ResetBits(GPIOC, STATUS_B_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_R_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_G_PIN);
+			
+		}
+		else if (Button_1_Status) {
+			//Turn on Red LED
+			GPIO_SetBits(GPIOC, STATUS_R_PIN);
+		}
+		else if (Button_2_Status) {
+			//Turn on Blue LED
+			GPIO_SetBits(GPIOC, STATUS_B_PIN);
+		}
+		else if (Button_3_Status) {
+			//Turn on Green LED
+			GPIO_SetBits(GPIOC, STATUS_G_PIN);
+		}
+		else if (Button_4_Status) {
+			//Turn on all LEDs
+			GPIO_SetBits(GPIOC, STATUS_R_PIN);
+			GPIO_SetBits(GPIOC, STATUS_G_PIN);
+			GPIO_SetBits(GPIOC, STATUS_B_PIN);
+		}
+		else {
+			GPIO_ResetBits(GPIOC, STATUS_B_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_R_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_G_PIN);
+		}
+	}
+}
 
 /**
     @brief      Tests brake switch by lighting the LED 
@@ -367,27 +420,27 @@ void Test_ADC(void)
     @param      None
     @return     None
 */
-void Test_BrakeSwitch(void)
-{
-    while(1)
-    {
-        Brake_Status = GPIO_ReadInputDataBit(GPIOA, BRAKE_IN_PIN);
-        if(Brake_Status == 1)
-        {
-            // Turn on LED
-           	GPIO_ResetBits(GPIOA, STATUS_R_PIN);
-           	GPIO_ResetBits(GPIOA, STATUS_G_PIN);	
-           	GPIO_ResetBits(GPIOA, STATUS_B_PIN);
-        }
-        else
-        {
-           	// Turn off LED
-          	GPIO_SetBits(GPIOA, STATUS_R_PIN);
-           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
-           	GPIO_SetBits(GPIOA, STATUS_B_PIN);            
-        }
-    }
-}
+//void Test_BrakeSwitch(void)
+//{
+//    while(1)
+//    {
+//        Brake_Status = GPIO_ReadInputDataBit(GPIOA, BRAKE_IN_PIN);
+//        if(Brake_Status == 1)
+//        {
+//            // Turn on LED
+//           	GPIO_ResetBits(GPIOA, STATUS_R_PIN);
+//           	GPIO_ResetBits(GPIOA, STATUS_G_PIN);	
+//           	GPIO_ResetBits(GPIOA, STATUS_B_PIN);
+//        }
+//        else
+//        {
+//           	// Turn off LED
+//          	GPIO_SetBits(GPIOA, STATUS_R_PIN);
+//           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
+//           	GPIO_SetBits(GPIOA, STATUS_B_PIN);            
+//        }
+//    }
+//}
 
 /**
     @brief      Tests primary encoder by lighting up RGB LED at different positions
@@ -396,40 +449,40 @@ void Test_BrakeSwitch(void)
     @param      None
     @return     None
 */
-void Test_Primary_Encoder(void)
-{
-    // Reset encoder counter registers
-	TIM_SetCounter(TIM2, 0);
-    TIM_SetCounter(TIM3, 0);
-	
-	while(1) {
-        APPS_Position_1 = TIM_GetCounter(TIM2);
-        if(APPS_Position_1 > 0 && APPS_Position_1 <= 2000)    
-        {
-            // Turn on red LED
-          	GPIO_ResetBits(GPIOA, STATUS_R_PIN);
- 		
-           	// Keep green and blue off
-           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
-           	GPIO_SetBits(GPIOA, STATUS_B_PIN);
-       	}
-        else if(APPS_Position_1 > 2000 && APPS_Position_1 <= 4000) 
-       	{
-         	// Turn on green LED
-           	GPIO_ResetBits(GPIOA, STATUS_G_PIN);
-         
-           	// Keep red and blue off
-           	GPIO_SetBits(GPIOA, STATUS_R_PIN);
-           	GPIO_SetBits(GPIOA, STATUS_B_PIN); 
-       	}
-        else
-       	{
-           	// Turn on blue LED
-           	GPIO_ResetBits(GPIOA, STATUS_B_PIN);
-	
-           	// Keep green and red off
-          	GPIO_SetBits(GPIOA, STATUS_R_PIN);
-           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
-       	}
-	}	
-}
+//void Test_Primary_Encoder(void)
+//{
+//    // Reset encoder counter registers
+//	TIM_SetCounter(TIM2, 0);
+//    TIM_SetCounter(TIM3, 0);
+//	
+//	while(1) {
+//        APPS_Position_1 = TIM_GetCounter(TIM2);
+//        if(APPS_Position_1 > 0 && APPS_Position_1 <= 2000)    
+//        {
+//            // Turn on red LED
+//          	GPIO_ResetBits(GPIOA, STATUS_R_PIN);
+// 		
+//           	// Keep green and blue off
+//           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
+//           	GPIO_SetBits(GPIOA, STATUS_B_PIN);
+//       	}
+//        else if(APPS_Position_1 > 2000 && APPS_Position_1 <= 4000) 
+//       	{
+//         	// Turn on green LED
+//           	GPIO_ResetBits(GPIOA, STATUS_G_PIN);
+//         
+//           	// Keep red and blue off
+//           	GPIO_SetBits(GPIOA, STATUS_R_PIN);
+//           	GPIO_SetBits(GPIOA, STATUS_B_PIN); 
+//       	}
+//        else
+//       	{
+//           	// Turn on blue LED
+//           	GPIO_ResetBits(GPIOA, STATUS_B_PIN);
+//	
+//           	// Keep green and red off
+//          	GPIO_SetBits(GPIOA, STATUS_R_PIN);
+//           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
+//       	}
+//	}	
+ //}

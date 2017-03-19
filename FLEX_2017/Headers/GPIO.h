@@ -82,6 +82,15 @@
 //Battery Monitoring
 #define BATTERY_STATUS			GPIO_Pin_3
 
+//Buttons (GPIOC)
+#define BUTTON_1						GPIO_Pin_3
+
+//Buttons (GPIOA)
+#define BUTTON_2						GPIO_Pin_0
+#define BUTTON_3						GPIO_Pin_1
+#define BUTTON_4						GPIO_Pin_2
+
+
 
 //Constants	
 
