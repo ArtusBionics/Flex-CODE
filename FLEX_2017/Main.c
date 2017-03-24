@@ -17,6 +17,7 @@
 // Constants
 
 // Variables
+
 volatile uint16_t ADC1ConvertedValue;
 volatile uint32_t TIM16_Wheel_Speed;
 //volatile uint8_t Brake_Status;
@@ -26,7 +27,6 @@ volatile uint8_t Button_1_Status;
 volatile uint8_t Button_2_Status;
 volatile uint8_t Button_3_Status;
 volatile uint8_t Button_4_Status;
-
 
 volatile uint16_t IC3ReadValuesss1 = 0, IC3ReadValuesss2 = 0;
 

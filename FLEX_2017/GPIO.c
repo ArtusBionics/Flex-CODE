@@ -16,11 +16,11 @@
 */
 void ConfigureGPIO(void)
 {
-    GPIO_InitTypeDef GPIO_InitStruct;										//GPIO init structure
+  GPIO_InitTypeDef GPIO_InitStruct;																		//GPIO init structure
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE); 				    //Enable clock to GPIOA pins
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE); 					//Enable clock to GPIOB pins
 	
-    GPIO_DeInit(GPIOA);
+  GPIO_DeInit(GPIOA);
 	GPIO_DeInit(GPIOB);
     
   // Configure Status LEDs: output mode, open drain, 2MHz frequency 
