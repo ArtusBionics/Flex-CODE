@@ -1,44 +1,36 @@
-;******************** (C) COPYRIGHT 2016 STMicroelectronics ********************
-;* File Name          : startup_stm32f042x6.s
+;******************** (C) COPYRIGHT 2014 STMicroelectronics ********************
+;* File Name          : startup_stm32f030xc.s
 ;* Author             : MCD Application Team
-;* Version            : V2.2.3
-;* Date               : 29-January-2016
-;* Description        : STM32F042x4/STM32F042x6 devices vector table for MDK-ARM toolchain.
+;* Version            : V1.5.0
+;* Date               : 05-December-2014
+;* Description        : STM32F030CC/STM32F030RC devices vector table for MDK-ARM toolchain.
 ;*                      This module performs:
 ;*                      - Set the initial SP
 ;*                      - Set the initial PC == Reset_Handler
 ;*                      - Set the vector table entries with the exceptions ISR address
+;*                      - Configure the system clock
 ;*                      - Branches to __main in the C library (which eventually
 ;*                        calls main()).
 ;*                      After Reset the CortexM0 processor is in Thread mode,
 ;*                      priority is Privileged, and the Stack is set to Main.
-;* <<< Use Configuration Wizard in Context Menu >>>
+;* <<< Use Configuration Wizard in Context Menu >>>   
 ;*******************************************************************************
-;*
-;* Redistribution and use in source and binary forms, with or without modification,
-;* are permitted provided that the following conditions are met:
-;*   1. Redistributions of source code must retain the above copyright notice,
-;*      this list of conditions and the following disclaimer.
-;*   2. Redistributions in binary form must reproduce the above copyright notice,
-;*      this list of conditions and the following disclaimer in the documentation
-;*      and/or other materials provided with the distribution.
-;*   3. Neither the name of STMicroelectronics nor the names of its contributors
-;*      may be used to endorse or promote products derived from this software
-;*      without specific prior written permission.
-;*
-;* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-;* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-;* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-;* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-;* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-;* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-;* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-;* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-;* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-;* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+;  @attention
+; 
+;  Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+;  You may not use this file except in compliance with the License.
+;  You may obtain a copy of the License at:
+; 
+;         http://www.st.com/software_license_agreement_liberty_v2
+; 
+;  Unless required by applicable law or agreed to in writing, software 
+;  distributed under the License is distributed on an "AS IS" BASIS, 
+;  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+;  See the License for the specific language governing permissions and
+;  limitations under the License.
+; 
+;*******************************************************************************
 ;
-;*******************************************************************************
-
 ; Amount of memory (in bytes) allocated for Stack
 ; Tailor this value to your application needs
 ; <h> Stack Configuration
@@ -92,38 +84,36 @@ __Vectors       DCD     __initial_sp                   ; Top of Stack
 
                 ; External Interrupts
                 DCD     WWDG_IRQHandler                ; Window Watchdog
-                DCD     PVD_VDDIO2_IRQHandler          ; PVD through EXTI Line detect
+                DCD     0                              ; Reserved
                 DCD     RTC_IRQHandler                 ; RTC through EXTI Line
                 DCD     FLASH_IRQHandler               ; FLASH
-                DCD     RCC_CRS_IRQHandler             ; RCC and CRS
+                DCD     RCC_IRQHandler                 ; RCC
                 DCD     EXTI0_1_IRQHandler             ; EXTI Line 0 and 1
                 DCD     EXTI2_3_IRQHandler             ; EXTI Line 2 and 3
                 DCD     EXTI4_15_IRQHandler            ; EXTI Line 4 to 15
-                DCD     TSC_IRQHandler                 ; TS
+                DCD     0                              ; Reserved
                 DCD     DMA1_Channel1_IRQHandler       ; DMA1 Channel 1
                 DCD     DMA1_Channel2_3_IRQHandler     ; DMA1 Channel 2 and Channel 3
                 DCD     DMA1_Channel4_5_IRQHandler     ; DMA1 Channel 4 and Channel 5
                 DCD     ADC1_IRQHandler                ; ADC1 
                 DCD     TIM1_BRK_UP_TRG_COM_IRQHandler ; TIM1 Break, Update, Trigger and Commutation
                 DCD     TIM1_CC_IRQHandler             ; TIM1 Capture Compare
-                DCD     TIM2_IRQHandler                ; TIM2
+                DCD     0                              ; Reserved
                 DCD     TIM3_IRQHandler                ; TIM3
-                DCD     0                              ; Reserved
-                DCD     0                              ; Reserved
+                DCD     TIM6_IRQHandler                ; TIM6
+                DCD     TIM7_IRQHandler                ; TIM7
                 DCD     TIM14_IRQHandler               ; TIM14
-                DCD     0                              ; Reserved
+                DCD     TIM15_IRQHandler               ; TIM15
                 DCD     TIM16_IRQHandler               ; TIM16
                 DCD     TIM17_IRQHandler               ; TIM17
                 DCD     I2C1_IRQHandler                ; I2C1
-                DCD     0                              ; Reserved
+                DCD     I2C2_IRQHandler                ; I2C2
                 DCD     SPI1_IRQHandler                ; SPI1
                 DCD     SPI2_IRQHandler                ; SPI2
                 DCD     USART1_IRQHandler              ; USART1
                 DCD     USART2_IRQHandler              ; USART2
-                DCD     0                              ; Reserved
-                DCD     CEC_CAN_IRQHandler             ; CEC and CAN
-                DCD     USB_IRQHandler                 ; USB
-
+                DCD     USART3_6_IRQHandler            ; USART3, USART4, USART5, USART6
+                
 __Vectors_End
 
 __Vectors_Size  EQU  __Vectors_End - __Vectors
@@ -134,7 +124,7 @@ __Vectors_Size  EQU  __Vectors_End - __Vectors
 Reset_Handler    PROC
                  EXPORT  Reset_Handler                 [WEAK]
         IMPORT  __main
-        IMPORT  SystemInit  
+        IMPORT  SystemInit
 
 
 
@@ -162,7 +152,7 @@ Reset_Handler    PROC
         LDR R0,=0x40010000 
         LDR R1,=0x00000000
         STR R1, [R0]
-ApplicationStart
+ApplicationStart        
                  LDR     R0, =SystemInit
                  BLX     R0
                  LDR     R0, =__main
@@ -196,61 +186,61 @@ SysTick_Handler PROC
 Default_Handler PROC
 
                 EXPORT  WWDG_IRQHandler                [WEAK]
-                EXPORT  PVD_VDDIO2_IRQHandler          [WEAK]
                 EXPORT  RTC_IRQHandler                 [WEAK]
                 EXPORT  FLASH_IRQHandler               [WEAK]
-                EXPORT  RCC_CRS_IRQHandler             [WEAK]
+                EXPORT  RCC_IRQHandler                 [WEAK]
                 EXPORT  EXTI0_1_IRQHandler             [WEAK]
                 EXPORT  EXTI2_3_IRQHandler             [WEAK]
                 EXPORT  EXTI4_15_IRQHandler            [WEAK]
-                EXPORT  TSC_IRQHandler                 [WEAK]
                 EXPORT  DMA1_Channel1_IRQHandler       [WEAK]
                 EXPORT  DMA1_Channel2_3_IRQHandler     [WEAK]
-                EXPORT  DMA1_Channel4_5_IRQHandler [WEAK]
-                EXPORT  ADC1_IRQHandler           [WEAK]
+                EXPORT  DMA1_Channel4_5_IRQHandler     [WEAK]
+                EXPORT  ADC1_IRQHandler                [WEAK]
                 EXPORT  TIM1_BRK_UP_TRG_COM_IRQHandler [WEAK]
                 EXPORT  TIM1_CC_IRQHandler             [WEAK]
-                EXPORT  TIM2_IRQHandler                [WEAK]
                 EXPORT  TIM3_IRQHandler                [WEAK]
+                EXPORT  TIM6_IRQHandler                [WEAK]
+                EXPORT  TIM7_IRQHandler                [WEAK]
                 EXPORT  TIM14_IRQHandler               [WEAK]
+                EXPORT  TIM15_IRQHandler               [WEAK]
                 EXPORT  TIM16_IRQHandler               [WEAK]
                 EXPORT  TIM17_IRQHandler               [WEAK]
                 EXPORT  I2C1_IRQHandler                [WEAK]
+                EXPORT  I2C2_IRQHandler                [WEAK]
                 EXPORT  SPI1_IRQHandler                [WEAK]
                 EXPORT  SPI2_IRQHandler                [WEAK]
                 EXPORT  USART1_IRQHandler              [WEAK]
                 EXPORT  USART2_IRQHandler              [WEAK]
-                EXPORT  CEC_CAN_IRQHandler             [WEAK]
-                EXPORT  USB_IRQHandler                 [WEAK]
+                EXPORT  USART3_6_IRQHandler            [WEAK]
 
 
 WWDG_IRQHandler
-PVD_VDDIO2_IRQHandler
 RTC_IRQHandler
 FLASH_IRQHandler
-RCC_CRS_IRQHandler
+RCC_IRQHandler
 EXTI0_1_IRQHandler
 EXTI2_3_IRQHandler
 EXTI4_15_IRQHandler
-TSC_IRQHandler
 DMA1_Channel1_IRQHandler
 DMA1_Channel2_3_IRQHandler
 DMA1_Channel4_5_IRQHandler
-ADC1_IRQHandler
+ADC1_IRQHandler 
 TIM1_BRK_UP_TRG_COM_IRQHandler
 TIM1_CC_IRQHandler
-TIM2_IRQHandler
 TIM3_IRQHandler
+TIM6_IRQHandler
+TIM7_IRQHandler
 TIM14_IRQHandler
+TIM15_IRQHandler
 TIM16_IRQHandler
 TIM17_IRQHandler
 I2C1_IRQHandler
+I2C2_IRQHandler
 SPI1_IRQHandler
 SPI2_IRQHandler
 USART1_IRQHandler
 USART2_IRQHandler
-CEC_CAN_IRQHandler
-USB_IRQHandler
+USART3_6_IRQHandler
 
                 B       .
 

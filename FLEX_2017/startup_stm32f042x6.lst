@@ -432,12 +432,11 @@ ARM Macro Assembler    Page 7
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=.\objects\startup_stm32f042x6.d -o.\objects\startup_stm32f042x6.o 
--I"C:\Users\User 1\Documents\GitHub\FSM_2017-Code\RTE" -IC:\Keil_v5\ARM\PACK\AR
-M\CMSIS\5.0.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Devi
-ce\Include --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predef
-ine="__UVISION_VERSION SETA 520" --predefine="_RTE_ SETA 1" --predefine="STM32F
-042x6 SETA 1" --list=startup_stm32f042x6.lst RTE\Device\STM32F042K6\startup_stm
-32f042x6.s
+-I.\RTE\_FLEX_2017 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include -IC:\Kei
+l_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include --predefine="__EVAL SETA 
+1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 523" --p
+redefine="_RTE_ SETA 1" --predefine="STM32F042x6 SETA 1" --list=startup_stm32f0
+42x6.lst RTE\Device\STM32F042K6\startup_stm32f042x6.s
 
 
 
