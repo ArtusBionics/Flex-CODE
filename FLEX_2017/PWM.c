@@ -49,7 +49,7 @@ __IO uint32_t DisplayActive = 0;
 static void DAC_Config(void);
 static void COMP_Config(void);
 static void TIM_Config(void);
-static void DisplayOnLCD(uint32_t data);
+//static void DisplayOnLCD(uint32_t data);
 
 /**
   * @brief  Main program.
@@ -67,13 +67,13 @@ int main(void)
 
     /* Initialize the TFT-LCD */
 #ifdef USE_STM320518_EVAL
-    STM320518_LCD_Init();
+    //STM320518_LCD_Init();
 #else 
-    STM32072B_LCD_Init();
+    //STM32072B_LCD_Init();
 #endif /* USE_STM320518_EVAL */
     
     /* Clear the TFT-LCD */
-    LCD_Clear(LCD_COLOR_WHITE);
+    //LCD_Clear(LCD_COLOR_WHITE);
       
     /* DAC Channel1 configuration */
     DAC_Config();
@@ -94,7 +94,7 @@ int main(void)
       MeasuredPulse = (uint32_t)(((uint64_t) Capture * 1000000) / ((uint32_t)SystemCoreClock));
       
       /* Display measured pulse width on Glass LCD and color LCD */
-      DisplayOnLCD(MeasuredPulse);  
+      //DisplayOnLCD(MeasuredPulse);  
       DisplayActive = 0;
     }
   }
@@ -223,12 +223,12 @@ static void TIM_Config(void)
   * @param  None
   * @retval None
   */
-static void DisplayOnLCD(uint32_t value)
-{
-  uint8_t text[50];
-  sprintf((char*)text,"PulseWidth = %d us  ",value);
-  LCD_DisplayStringLine(LINE(5),text);
-}
+//static void DisplayOnLCD(uint32_t value)
+//{
+//  uint8_t text[50];
+//  sprintf((char*)text,"PulseWidth = %d us  ",value);
+//  LCD_DisplayStringLine(LINE(5),text);
+//}
 
 #ifdef  USE_FULL_ASSERT
 

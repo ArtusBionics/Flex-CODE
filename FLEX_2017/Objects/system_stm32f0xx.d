@@ -1,11 +1,11 @@
-.\objects\system_stm32f0xx.o: RTE\Device\STM32F042K6\system_stm32f0xx.c
-.\objects\system_stm32f0xx.o: RTE\Device\STM32F042K6\stm32f0xx.h
+.\objects\system_stm32f0xx.o: RTE\Device\STM32F030R8\system_stm32f0xx.c
+.\objects\system_stm32f0xx.o: .\RTE\Device\STM32F042K6\stm32f0xx.h
 .\objects\system_stm32f0xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h
 .\objects\system_stm32f0xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\system_stm32f0xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h
 .\objects\system_stm32f0xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h
-.\objects\system_stm32f0xx.o: RTE\Device\STM32F042K6\system_stm32f0xx.h
-.\objects\system_stm32f0xx.o: RTE\Device\STM32F042K6\stm32f0xx_conf.h
+.\objects\system_stm32f0xx.o: .\RTE\Device\STM32F042K6\system_stm32f0xx.h
+.\objects\system_stm32f0xx.o: .\RTE\Device\STM32F042K6\stm32f0xx_conf.h
 .\objects\system_stm32f0xx.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h
 .\objects\system_stm32f0xx.o: .\RTE\Device\STM32F042K6\stm32f0xx.h
 .\objects\system_stm32f0xx.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h
