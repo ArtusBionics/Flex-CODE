@@ -46,7 +46,7 @@
 /** @addtogroup STM32F0xx_System_Includes
   * @{
   */
-
+#include "stm32f0xx.h"
 /**
   * @}
   */

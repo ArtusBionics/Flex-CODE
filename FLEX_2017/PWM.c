@@ -40,7 +40,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-__IO uint32_t Capture = 0;
+__IO uint32_t Capture_PWM = 0;
 __IO uint32_t MeasuredPulse = 0;
 __IO uint32_t DisplayActive = 0;
 
@@ -56,7 +56,7 @@ static void TIM_Config(void);
   * @param  None
   * @retval None
   */
-int main(void)
+int main_PWM(void)
 {
   /*!< At this stage the microcontroller clock setting is already configured, 
        this is done through SystemInit() function which is called from startup
@@ -81,7 +81,7 @@ int main(void)
     /* COMP1 Configuration */
     COMP_Config();
     
-    /* TIM2 Configuration in input capture mode */
+    /* TIM2 Configuration in input Capture mode */
     TIM_Config();
    
 
@@ -91,7 +91,7 @@ int main(void)
     if (DisplayActive != 0)
     {
       /* Compute the pulse width in us */
-      MeasuredPulse = (uint32_t)(((uint64_t) Capture * 1000000) / ((uint32_t)SystemCoreClock));
+      MeasuredPulse = (uint32_t)(((uint64_t) Capture_PWM * 1000000) / ((uint32_t)SystemCoreClock));
       /* Display measured pulse width on Glass LCD and color LCD */
       //DisplayOnLCD(MeasuredPulse);  
       DisplayActive = 0;
@@ -157,7 +157,7 @@ static void COMP_Config(void)
   /* COMP1 Init: DAC1 output is used COMP1 inverting input */
   COMP_StructInit(&COMP_InitStructure);
   COMP_InitStructure.COMP_InvertingInput = COMP_InvertingInput_DAC1;
-  /* Redirect COMP1 output to TIM2 Input capture 4 */
+  /* Redirect COMP1 output to TIM2 Input Capture 4 */
   COMP_InitStructure.COMP_Output = COMP_Output_TIM2IC4;
   COMP_InitStructure.COMP_Mode = COMP_Mode_HighSpeed;
   COMP_InitStructure.COMP_Hysteresis = COMP_Hysteresis_No;
@@ -168,7 +168,7 @@ static void COMP_Config(void)
 }
 
 /**
-  * @brief  Configures TIM2 channel 4 in input capture mode
+  * @brief  Configures TIM2 channel 4 in input Capture mode
   * @param  None
   * @retval None
   */
@@ -191,10 +191,10 @@ static void TIM_Config(void)
   TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
   TIM_ClearFlag(TIM2, TIM_FLAG_Update);
   
-  /* TIM2 Channel4 Input capture Mode configuration */
+  /* TIM2 Channel4 Input Capture Mode configuration */
   TIM_ICStructInit(&TIM_ICInitStructure);
   TIM_ICInitStructure.TIM_Channel = TIM_Channel_4;
-  /* TIM2 counter is captured at each transition detection: rising or falling edges (both edges) */
+  /* TIM2 counter is Captured at each transition detection: rising or falling edges (both edges) */
   TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_BothEdge;
   TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;
   TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;
@@ -207,7 +207,7 @@ static void TIM_Config(void)
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
   
-  /* Enable capture interrupt */
+  /* Enable Capture interrupt */
   TIM_ITConfig(TIM2, TIM_IT_CC4, ENABLE);
   
   /* Enable the TIM2 counter */

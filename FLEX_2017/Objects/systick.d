@@ -5,9 +5,9 @@
 .\objects\systick.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h
 .\objects\systick.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h
 .\objects\systick.o: .\RTE\Device\STM32F042K6\system_stm32f0xx.h
+.\objects\systick.o: .\RTE\Device\STM32F042K6\stm32f0xx.h
 .\objects\systick.o: .\RTE\Device\STM32F042K6\stm32f0xx_conf.h
 .\objects\systick.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h
-.\objects\systick.o: .\RTE\Device\STM32F042K6\stm32f0xx.h
 .\objects\systick.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h
 .\objects\systick.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_cec.h
 .\objects\systick.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_crc.h
