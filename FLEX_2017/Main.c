@@ -53,7 +53,6 @@ void Test_RGBLED(void);
 void Test_ADC(void);
 void Test_BrakeSwitch(void);
 void Test_Primary_Encoder(void);
-
 void Test_Buttons(void);
 
 /**
@@ -207,8 +206,7 @@ void EXTI4_15_IRQHandler(void)
             GPIO_SetBits(GPIOA, STATUS_R_PIN);
             GPIO_SetBits(GPIOA, STATUS_G_PIN);         
         }
-        counts++;
-            
+        counts++; 
     
     /* Clear the EXTI line 7 pending bit */
     EXTI_ClearITPendingBit(EXTI_Line7);
@@ -390,10 +388,15 @@ void Test_Buttons(void) {
 		else if (Button_1_Status) {
 			//Turn on Red LED
 			GPIO_SetBits(GPIOC, STATUS_R_PIN);
+			// set all flexors for a curl
+			// GPIO_SetBits(GPIOA, THUMB_FLEX_1);
+			// GPIO....
+			// 
 		}
 		else if (Button_2_Status) {
 			//Turn on Blue LED
 			GPIO_SetBits(GPIOC, STATUS_B_PIN);
+			// set 
 		}
 		else if (Button_3_Status) {
 			//Turn on Green LED
@@ -413,76 +416,5 @@ void Test_Buttons(void) {
 	}
 }
 
-/**
-    @brief      Tests brake switch by lighting the LED 
-    @note       Switch unconnected  = brake pressed  (LED ON)
-                Switch connected    = brake released (LED OFF)
-    @param      None
-    @return     None
-*/
-//void Test_BrakeSwitch(void)
-//{
-//    while(1)
-//    {
-//        Brake_Status = GPIO_ReadInputDataBit(GPIOA, BRAKE_IN_PIN);
-//        if(Brake_Status == 1)
-//        {
-//            // Turn on LED
-//           	GPIO_ResetBits(GPIOA, STATUS_R_PIN);
-//           	GPIO_ResetBits(GPIOA, STATUS_G_PIN);	
-//           	GPIO_ResetBits(GPIOA, STATUS_B_PIN);
-//        }
-//        else
-//        {
-//           	// Turn off LED
-//          	GPIO_SetBits(GPIOA, STATUS_R_PIN);
-//           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
-//           	GPIO_SetBits(GPIOA, STATUS_B_PIN);            
-//        }
-//    }
-//}
 
-/**
-    @brief      Tests primary encoder by lighting up RGB LED at different positions
-    @note       Rotate Clockwise            = Increase Counter Value
-                Rotate Counter Clockwise    = Decrease Counter Value
-    @param      None
-    @return     None
-*/
-//void Test_Primary_Encoder(void)
-//{
-//    // Reset encoder counter registers
-//	TIM_SetCounter(TIM2, 0);
-//    TIM_SetCounter(TIM3, 0);
-//	
-//	while(1) {
-//        APPS_Position_1 = TIM_GetCounter(TIM2);
-//        if(APPS_Position_1 > 0 && APPS_Position_1 <= 2000)    
-//        {
-//            // Turn on red LED
-//          	GPIO_ResetBits(GPIOA, STATUS_R_PIN);
-// 		
-//           	// Keep green and blue off
-//           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
-//           	GPIO_SetBits(GPIOA, STATUS_B_PIN);
-//       	}
-//        else if(APPS_Position_1 > 2000 && APPS_Position_1 <= 4000) 
-//       	{
-//         	// Turn on green LED
-//           	GPIO_ResetBits(GPIOA, STATUS_G_PIN);
-//         
-//           	// Keep red and blue off
-//           	GPIO_SetBits(GPIOA, STATUS_R_PIN);
-//           	GPIO_SetBits(GPIOA, STATUS_B_PIN); 
-//       	}
-//        else
-//       	{
-//           	// Turn on blue LED
-//           	GPIO_ResetBits(GPIOA, STATUS_B_PIN);
-//	
-//           	// Keep green and red off
-//          	GPIO_SetBits(GPIOA, STATUS_R_PIN);
-//           	GPIO_SetBits(GPIOA, STATUS_G_PIN);
-//       	}
-//	}	
- //}
+

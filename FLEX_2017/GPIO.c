@@ -46,7 +46,7 @@ void ConfigureGPIO(void)
 	
 	// Configure Thumb: output mode, push-pull, 2MHz frequency 
 	//GPIOF Ports
-		GPIO_InitStruct.GPIO_Pin = THUMB_FLEX_1;
+	GPIO_InitStruct.GPIO_Pin = THUMB_FLEX_1;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;

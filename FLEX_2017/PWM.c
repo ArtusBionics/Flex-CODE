@@ -92,7 +92,6 @@ int main(void)
     {
       /* Compute the pulse width in us */
       MeasuredPulse = (uint32_t)(((uint64_t) Capture * 1000000) / ((uint32_t)SystemCoreClock));
-      
       /* Display measured pulse width on Glass LCD and color LCD */
       //DisplayOnLCD(MeasuredPulse);  
       DisplayActive = 0;

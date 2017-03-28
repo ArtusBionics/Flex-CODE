@@ -6,7 +6,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_cec.h)(0x58CDBBA6)
@@ -37,7 +37,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_cec.h)(0x58CDBBA6)
@@ -68,7 +68,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -99,7 +99,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -130,7 +130,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -161,7 +161,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -192,7 +192,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -223,7 +223,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -254,7 +254,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -285,7 +285,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -316,7 +316,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -347,7 +347,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -378,7 +378,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -409,7 +409,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -440,7 +440,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -471,7 +471,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -502,7 +502,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -534,7 +534,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -567,7 +567,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -598,7 +598,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -629,7 +629,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -660,7 +660,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -691,7 +691,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -722,7 +722,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -771,13 +771,13 @@ F (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_usart.h)(0x58CDBBA6)()
 F (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_wwdg.h)(0x58CDBBA6)()
 F (.\stm32f0xx_it.h)(0x58D882F7)()
 F (.\stm32f0xx_conf.h)(0x58D872D2)()
-F (.\Main.c)(0x58D484E7)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\Main.c)(0x58D9D131)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\RTE\Device\STM32F042K6\stm32f0xx.h)(0x58CDBBA5)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -808,13 +808,13 @@ I (.\Headers\ErrorHandling.h)(0x58CDBBA5)
 I (ADC.h)(0x58CDBBA1)
 I (.\Headers\Timers.h)(0x58CDBBA5)
 I (Interrupt.h)(0x58CDBBA2)
-F (.\GPIO.c)(0x58D4850B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+F (.\GPIO.c)(0x58D9CA19)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
 I (.\RTE\Device\STM32F042K6\stm32f0xx.h)(0x58CDBBA5)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -846,7 +846,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -879,7 +879,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -911,7 +911,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -937,14 +937,14 @@ I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_usart.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_wwdg.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_misc.h)(0x58CDBBA6)
 I (ADC.h)(0x58CDBBA1)
-F (.\PWM.c)(0x58D88581)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
+F (.\PWM.c)(0x58D9D62F)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
 I (PWM.h)(0x58D8847F)
 I (.\RTE\Device\STM32F042K6\stm32f0xx.h)(0x58CDBBA5)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
@@ -970,6 +970,38 @@ I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_usart.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_wwdg.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_misc.h)(0x58CDBBA6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F6D9A8)
+F (.\Configurations.c)(0x58D9CD7F)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\configurations.o --omf_browse .\objects\configurations.crf --depend .\objects\configurations.d)
+I (.\RTE\Device\STM32F042K6\stm32f0xx.h)(0x58CDBBA5)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
+I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_cec.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_crc.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_crs.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_comp.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_dac.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_dbgmcu.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_dma.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_exti.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_flash.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_gpio.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_syscfg.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_i2c.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_iwdg.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_pwr.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_rcc.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_rtc.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_spi.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_tim.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_usart.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_wwdg.h)(0x58CDBBA6)
+I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_misc.h)(0x58CDBBA6)
+I (.\Headers\GPIO.h)(0x58CE0CCA)
 F (RTE\Device\STM32F030R8\startup_stm32f030x8.s)(0x56EAC92A)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include--pd "__UVISION_VERSION SETA 523" --pd "_RTE_ SETA 1" --pd "STM32F030x8 SETA 1"--list startup_stm32f030x8.lst --xref -o .\objects\startup_stm32f030x8.o --depend .\objects\startup_stm32f030x8.d)
 F (RTE\Device\STM32F030R8\system_stm32f0xx.c)(0x56EAC92A)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\RTE\Device\STM32F042K6 -I .\STM32F0_SPL_v1.5.0\inc -I .\STM32F0_SPL_v1.5.0\src -I .\Headers -I .\Objects -I .\STM32-CAN-Code-I.\RTE\_FLEX_2017-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\1.5.0\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F042-o .\objects\system_stm32f0xx.o --omf_browse .\objects\system_stm32f0xx.crf --depend .\objects\system_stm32f0xx.d)
 I (.\RTE\Device\STM32F042K6\stm32f0xx.h)(0x58CDBBA5)
@@ -977,7 +1009,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\core_cm0.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F6D9A8)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_compiler.h)(0x58991C7A)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include\cmsis_armcc.h)(0x58991C7A)
-I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58CDBBA5)
+I (.\RTE\Device\STM32F042K6\system_stm32f0xx.h)(0x58D8927B)
 I (.\RTE\Device\STM32F042K6\stm32f0xx_conf.h)(0x58CDBBA5)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_adc.h)(0x58CDBBA6)
 I (.\STM32F0_SPL_v1.5.0\inc\stm32f0xx_can.h)(0x58CDBBA6)

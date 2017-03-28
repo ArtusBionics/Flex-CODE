@@ -659,6 +659,11 @@
               <FileType>1</FileType>
               <FilePath>.\PWM.c</FilePath>
             </File>
+            <File>
+              <FileName>Configurations.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Configurations.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
