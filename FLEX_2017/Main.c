@@ -396,7 +396,8 @@ void Test_Buttons(void) {
 		else if (Button_2_Status) {
 			//Turn on Blue LED
 			GPIO_SetBits(GPIOC, STATUS_B_PIN);
-			// set 
+			// set all flexors
+			// set ab/aductors for finger spread
 		}
 		else if (Button_3_Status) {
 			//Turn on Green LED
