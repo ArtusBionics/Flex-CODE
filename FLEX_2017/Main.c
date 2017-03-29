@@ -64,8 +64,8 @@ int main(void)
 {
 	ConfigureGPIO();
 	ConfigureSysTick();
-	ConfigureADC();
-  ConfigureTIM();
+	//ConfigureADC();
+  //ConfigureTIM();
     //ConfigureInterrupt();
     //ConfigureEXTI17();
     //TIM_Config();
