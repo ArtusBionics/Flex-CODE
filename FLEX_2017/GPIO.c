@@ -155,12 +155,12 @@ void ConfigureGPIO(void)
 	
 	//Configure Buttons
 	//GPIOC
-	GPIO_InitStruct.GPIO_Pin = BUTTON_1;
-	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
-	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-	GPIO_Init(GPIOC, &GPIO_InitStruct);
+//	GPIO_InitStruct.GPIO_Pin = BUTTON_1;
+//	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
+//	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+//	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
+//	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+//	GPIO_Init(GPIOC, &GPIO_InitStruct);
 	//GPIOA
 	GPIO_InitStruct.GPIO_Pin = BUTTON_2 | BUTTON_3 | BUTTON_4 ;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;

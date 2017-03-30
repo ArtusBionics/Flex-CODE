@@ -13,6 +13,7 @@
 #include "ADC.h"
 #include "Timers.h" 
 #include "Interrupt.h"
+#include "EXTI.h"
 
 // Constants
 
@@ -46,8 +47,8 @@ GPIO_InitTypeDef   GPIO_InitStructure;
 NVIC_InitTypeDef   NVIC_InitStructure;
 
 // Function Prototypes
-void ConfigureEXTI17(void);
-static void TIM_Config(void);
+//void ConfigureEXTI17(void);
+//static void TIM_Config(void);
 void TIM1_CC_IRQHandler(void);
 void Test_RGBLED(void);
 void Test_ADC(void);
@@ -64,6 +65,8 @@ int main(void)
 {
 	ConfigureGPIO();
 	ConfigureSysTick();
+	//EXTI0_Config();
+	
 	//ConfigureADC();
   //ConfigureTIM();
     //ConfigureInterrupt();
@@ -90,86 +93,86 @@ int main(void)
   * @param  None
   * @retval None
   */
-static void TIM_Config(void)
-{
-  TIM_ICInitTypeDef  TIM_ICInitStructure;
-  GPIO_InitTypeDef GPIO_InitStructure;
-  NVIC_InitTypeDef NVIC_InitStructure;
-  
-  /* TIM17 clock enable */
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM17, ENABLE);
+//static void TIM_Config(void)
+//{
+//  TIM_ICInitTypeDef  TIM_ICInitStructure;
+//  GPIO_InitTypeDef GPIO_InitStructure;
+//  NVIC_InitTypeDef NVIC_InitStructure;
+//  
+//  /* TIM17 clock enable */
+//  RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM17, ENABLE);
 
-  /* GPIOA clock enable */
-  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
-  
-  /* TIM1 channel 2 pin (PE.11) configuration */
-//  GPIO_InitStructure.GPIO_Pin =  LEFT_WHEEL_SPEED_PIN;
-//  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-//  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-//  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-//  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-//  GPIO_Init(GPIOA, &GPIO_InitStructure);
+//  /* GPIOA clock enable */
+//  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+//  
+//  /* TIM1 channel 2 pin (PE.11) configuration */
+////  GPIO_InitStructure.GPIO_Pin =  LEFT_WHEEL_SPEED_PIN;
+////  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+////  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+////  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+////  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+////  GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-  /* Connect TIM pins to AF2 */
-//  GPIO_PinAFConfig(GPIOA, LEFT_WHEEL_PINSOURCE, GPIO_AF_2);
-  
-  /* TIM17 configuration: Input Capture mode ---------------------
-     The external signal is connected to TIM17 CH1 pin (PA.07)  
-     The Rising edge is used as active edge,
-     The TIM17 CCR1 is used to compute the frequency value 
-  ------------------------------------------------------------ */
+//  /* Connect TIM pins to AF2 */
+////  GPIO_PinAFConfig(GPIOA, LEFT_WHEEL_PINSOURCE, GPIO_AF_2);
+//  
+//  /* TIM17 configuration: Input Capture mode ---------------------
+//     The external signal is connected to TIM17 CH1 pin (PA.07)  
+//     The Rising edge is used as active edge,
+//     The TIM17 CCR1 is used to compute the frequency value 
+//  ------------------------------------------------------------ */
 
-  TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;
-  TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;
-  TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;
-  TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;
-  TIM_ICInitStructure.TIM_ICFilter = 0x0;
+//  TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;
+//  TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;
+//  TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;
+//  TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;
+//  TIM_ICInitStructure.TIM_ICFilter = 0x0;
 
-  TIM_ICInit(TIM17, &TIM_ICInitStructure);
-  
-  /* TIM enable counter */
-  TIM_Cmd(TIM17, ENABLE);
+//  TIM_ICInit(TIM17, &TIM_ICInitStructure);
+//  
+//  /* TIM enable counter */
+//  TIM_Cmd(TIM17, ENABLE);
 
-  /* Enable the CC2 Interrupt Request */
-  TIM_ITConfig(TIM17, TIM_IT_CC1, ENABLE);
-  
-  /* Enable the TIM1 global Interrupt */
-  NVIC_InitStructure.NVIC_IRQChannel = TIM17_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&NVIC_InitStructure);
-  
-}
+//  /* Enable the CC2 Interrupt Request */
+//  TIM_ITConfig(TIM17, TIM_IT_CC1, ENABLE);
+//  
+//  /* Enable the TIM1 global Interrupt */
+//  NVIC_InitStructure.NVIC_IRQChannel = TIM17_IRQn;
+//  NVIC_InitStructure.NVIC_IRQChannelPriority = 0;
+//  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+//  NVIC_Init(&NVIC_InitStructure);
+//  
+//}
 
-void ConfigureEXTI17(void) 
-{
-    /* Enable GPIOA clock */
-  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
+//void ConfigureEXTI17(void) 
+//{
+//    /* Enable GPIOA clock */
+//  RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 
-  /* Configure PA0 pin as input floating */
-//	GPIO_InitStructure.GPIO_Pin = LEFT_WHEEL_SPEED_PIN;
-//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-//	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
-//	GPIO_Init(GPIOA, &GPIO_InitStructure);
+//  /* Configure PA0 pin as input floating */
+////	GPIO_InitStructure.GPIO_Pin = LEFT_WHEEL_SPEED_PIN;
+////	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+////	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+////	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-  /* Enable SYSCFG clock */
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-  /* Connect EXTI7 Line to PA7 pin */
-  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource7);
+//  /* Enable SYSCFG clock */
+//  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+//  /* Connect EXTI7 Line to PA7 pin */
+//  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource7);
 
-  /* Configure EXTI7 line */
-  EXTI_InitStructure.EXTI_Line = EXTI_Line7;
-  EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
-  EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-  EXTI_Init(&EXTI_InitStructure);
+//  /* Configure EXTI7 line */
+//  EXTI_InitStructure.EXTI_Line = EXTI_Line7;
+//  EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+//  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+//  EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+//  EXTI_Init(&EXTI_InitStructure);
 
-  /* Enable and set EXTI7 Interrupt */
-  NVIC_InitStructure.NVIC_IRQChannel = EXTI4_15_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPriority = 0x00;
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&NVIC_InitStructure);
-}
+//  /* Enable and set EXTI7 Interrupt */
+//  NVIC_InitStructure.NVIC_IRQChannel = EXTI4_15_IRQn;
+//  NVIC_InitStructure.NVIC_IRQChannelPriority = 0x00;
+//  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+//  NVIC_Init(&NVIC_InitStructure);
+//}
 
 /**
   * @brief  This function handles External lines 4 to 15 interrupt request.
@@ -380,14 +383,14 @@ void Test_Buttons(void) {
 		
 		if (Button_1_Status + Button_2_Status + Button_3_Status + Button_4_Status != 1) {
 			//Turn off all LEDs
-			GPIO_ResetBits(GPIOC, STATUS_B_PIN);
-			GPIO_ResetBits(GPIOC, STATUS_R_PIN);
-			GPIO_ResetBits(GPIOC, STATUS_G_PIN);
+			GPIO_SetBits(GPIOC, STATUS_B_PIN);
+			GPIO_SetBits(GPIOC, STATUS_R_PIN);
+			GPIO_SetBits(GPIOC, STATUS_G_PIN);
 			
 		}
 		else if (Button_1_Status) {
 			//Turn on Red LED
-			GPIO_SetBits(GPIOC, STATUS_R_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_R_PIN);
 			// set all flexors for a curl
 			// GPIO_SetBits(GPIOA, THUMB_FLEX_1);
 			// GPIO....
@@ -395,27 +398,38 @@ void Test_Buttons(void) {
 		}
 		else if (Button_2_Status) {
 			//Turn on Blue LED
-			GPIO_SetBits(GPIOC, STATUS_B_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_B_PIN);
 			// set all flexors
 			// set ab/aductors for finger spread
 		}
 		else if (Button_3_Status) {
 			//Turn on Green LED
-			GPIO_SetBits(GPIOC, STATUS_G_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_G_PIN);
 		}
 		else if (Button_4_Status) {
 			//Turn on all LEDs
-			GPIO_SetBits(GPIOC, STATUS_R_PIN);
-			GPIO_SetBits(GPIOC, STATUS_G_PIN);
-			GPIO_SetBits(GPIOC, STATUS_B_PIN);
-		}
-		else {
-			GPIO_ResetBits(GPIOC, STATUS_B_PIN);
 			GPIO_ResetBits(GPIOC, STATUS_R_PIN);
 			GPIO_ResetBits(GPIOC, STATUS_G_PIN);
+			GPIO_ResetBits(GPIOC, STATUS_B_PIN);
+		}
+		else {
+			GPIO_SetBits(GPIOC, STATUS_B_PIN);
+			GPIO_SetBits(GPIOC, STATUS_R_PIN);
+			GPIO_SetBits(GPIOC, STATUS_G_PIN);
 		}
 	}
 }
 
+void EXTI0_1_IRQHandler(void) {
+	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
+		/* Toggle Red LED */
+		GPIO_ResetBits(GPIOC, STATUS_R_PIN);
+		Delay(1000);
+		GPIO_SetBits(GPIOC, STATUS_R_PIN);
+		
+		/* Clear the EXTI line 0 pending bit */
+		EXTI_ClearITPendingBit(EXTI_Line0);
+	}
+}
 
 
