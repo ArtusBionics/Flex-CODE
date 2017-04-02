@@ -25,16 +25,16 @@ void EXTI0_Config(void)
 	/* Enable GPIOC clock */
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
 	
-	/* Configure Button 1 pin as input floating */
-	GPIO_InitStruct.GPIO_Pin = BUTTON_1; 
+	/* Configure Button 2 pin as input floating */
+	GPIO_InitStruct.GPIO_Pin = BUTTON_2; 
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOA, &GPIO_InitStruct);
 	
 	/* Enable SYSCFG clock */
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-	/* Connect EXTI0 Line to Button 1 Pin */
-	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource3);
+	/* Connect EXTI3 Line to Button 1 Pin */
+	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource0);
 	
 	/* Configure EXTI0 line */
 	EXTI_InitStruct.EXTI_Line = EXTI_Line0;
@@ -43,7 +43,7 @@ void EXTI0_Config(void)
 	EXTI_InitStruct.EXTI_LineCmd = ENABLE;
 	EXTI_Init(&EXTI_InitStruct);
 	
-	/* Enable and set EXTI0 Interrupt */
+	/* Enable and set EXTI2_3 Interrupt */
 	NVIC_InitStruct.NVIC_IRQChannel = EXTI0_1_IRQn;
 	NVIC_InitStruct.NVIC_IRQChannelPriority = 0x00;
 	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;

@@ -36,3 +36,4 @@
 .\objects\main.o: ADC.h
 .\objects\main.o: .\Headers\Timers.h
 .\objects\main.o: Interrupt.h
+.\objects\main.o: .\Headers\EXTI.h

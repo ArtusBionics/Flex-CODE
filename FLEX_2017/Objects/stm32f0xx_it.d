@@ -33,3 +33,4 @@
 .\objects\stm32f0xx_it.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_wwdg.h
 .\objects\stm32f0xx_it.o: .\STM32F0_SPL_v1.5.0\inc\stm32f0xx_misc.h
 .\objects\stm32f0xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\stm32f0xx_it.o: .\Headers\GPIO.h

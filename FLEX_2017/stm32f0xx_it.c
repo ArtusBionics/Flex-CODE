@@ -29,6 +29,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_it.h"
+#include "GPIO.h"
 
 /** @addtogroup STM32F0xx_StdPeriph_Examples
   * @{
@@ -91,7 +92,7 @@ void SVC_Handler(void)
   * @param  None
   * @retval None
   */
-void PendSV_Handler(void)
+void PendSV_Handler_1(void)
 {
 }
 
@@ -159,8 +160,20 @@ void TIM2_IRQHandler(void)
 }*/
 
 /**
-  * @}
+  * @brief This function handles External line 0 to 1 interrupt request
   */
+//void EXTI0_1_IRQHandler(void) {
+//	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
+//		/* Toggle Red LED */
+//		GPIO_ResetBits(GPIOC, STATUS_R_PIN);
+//	
+////		Delay(1000);
+////		GPIO_SetBits(GPIOC, STATUS_R_PIN);
+//		
+//		/* Clear the EXTI line 0 pending bit */
+//		EXTI_ClearITPendingBit(EXTI_Line0);
+//	}
+//}
 
 /**
   * @}

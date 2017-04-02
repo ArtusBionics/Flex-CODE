@@ -54,7 +54,7 @@ void Test_RGBLED(void);
 //void Test_ADC(void);
 //void Test_BrakeSwitch(void);
 //void Test_Primary_Encoder(void);
-//void Test_Buttons(void);
+void Test_Buttons(void);
 
 /**
 * @brief  Main program.
@@ -65,27 +65,28 @@ int main(void)
 {
 	ConfigureGPIO();
 	ConfigureSysTick();
-	//EXTI0_Config();
+	EXTI0_Config();
 	
 	//ConfigureADC();
-  //ConfigureTIM();
+ // ConfigureTIM();
    // ConfigureInterrupt();
     //ConfigureEXTI17();
     //TIM_Config();
     
+	//	Test_Buttons();
     // Test Code: Uncomment only one function to test that particular part
- Test_RGBLED();
+ //Test_RGBLED();
     //Test_ADC();
     //Test_BrakeSwitch(); // Changed to Test_Buttons
     //Test_Primary_Encoder(); //Not for us
     
     // Reset encoder counter registers
 	
-	//while(1) {
+	while(1) {
       //  APPS_Position_1 = TIM_GetCounter(TIM2);
        // transmit_message(0x322, 0x0, 0x02, (uint64_t) APPS_Position_1);
       //  Delay(10);
-//	}	
+	}	
 }
 
 /**
@@ -376,7 +377,7 @@ void Test_ADC(void)
 void Test_Buttons(void) {
 	while(1)
 	{
-		Button_1_Status = GPIO_ReadInputDataBit(GPIOC, BUTTON_1);
+		//Button_1_Status = GPIO_ReadInputDataBit(GPIOC, BUTTON_1);
 		Button_2_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_2);
 	  Button_3_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_3);
 		Button_4_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_4);
@@ -388,7 +389,7 @@ void Test_Buttons(void) {
 			GPIO_SetBits(GPIOC, STATUS_G_PIN);
 			
 		}
-		else if (Button_1_Status) {
+		else if (Button_4_Status) {
 			//Turn on Red LED
 			GPIO_ResetBits(GPIOC, STATUS_R_PIN);
 			// set all flexors for a curl
@@ -406,12 +407,7 @@ void Test_Buttons(void) {
 			//Turn on Green LED
 			GPIO_ResetBits(GPIOC, STATUS_G_PIN);
 		}
-		else if (Button_4_Status) {
-			//Turn on all LEDs
-			GPIO_ResetBits(GPIOC, STATUS_R_PIN);
-			GPIO_ResetBits(GPIOC, STATUS_G_PIN);
-			GPIO_ResetBits(GPIOC, STATUS_B_PIN);
-		}
+		
 		else {
 			GPIO_SetBits(GPIOC, STATUS_B_PIN);
 			GPIO_SetBits(GPIOC, STATUS_R_PIN);
@@ -424,12 +420,14 @@ void EXTI0_1_IRQHandler(void) {
 	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
 		/* Toggle Red LED */
 		GPIO_ResetBits(GPIOC, STATUS_R_PIN);
-		Delay(1000);
-		GPIO_SetBits(GPIOC, STATUS_R_PIN);
+	
+		//Delay(1000);
+		//GPIO_SetBits(GPIOC, STATUS_R_PIN);
 		
 		/* Clear the EXTI line 0 pending bit */
 		EXTI_ClearITPendingBit(EXTI_Line0);
 	}
+	
 }
 
 
