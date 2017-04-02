@@ -47,14 +47,14 @@ GPIO_InitTypeDef   GPIO_InitStructure;
 NVIC_InitTypeDef   NVIC_InitStructure;
 
 // Function Prototypes
-//void ConfigureEXTI17(void);
-//static void TIM_Config(void);
+void ConfigureEXTI17(void);
+static void TIM_Config(void);
 void TIM1_CC_IRQHandler(void);
 void Test_RGBLED(void);
-void Test_ADC(void);
-void Test_BrakeSwitch(void);
-void Test_Primary_Encoder(void);
-void Test_Buttons(void);
+//void Test_ADC(void);
+//void Test_BrakeSwitch(void);
+//void Test_Primary_Encoder(void);
+//void Test_Buttons(void);
 
 /**
 * @brief  Main program.
@@ -69,23 +69,23 @@ int main(void)
 	
 	//ConfigureADC();
   //ConfigureTIM();
-    //ConfigureInterrupt();
+   // ConfigureInterrupt();
     //ConfigureEXTI17();
     //TIM_Config();
     
     // Test Code: Uncomment only one function to test that particular part
-    //Test_RGBLED();
+ Test_RGBLED();
     //Test_ADC();
     //Test_BrakeSwitch(); // Changed to Test_Buttons
     //Test_Primary_Encoder(); //Not for us
     
     // Reset encoder counter registers
 	
-	while(1) {
-        APPS_Position_1 = TIM_GetCounter(TIM2);
+	//while(1) {
+      //  APPS_Position_1 = TIM_GetCounter(TIM2);
        // transmit_message(0x322, 0x0, 0x02, (uint64_t) APPS_Position_1);
-        Delay(10);
-	}	
+      //  Delay(10);
+//	}	
 }
 
 /**
@@ -298,24 +298,24 @@ void Test_RGBLED(void)
     while(1)
     {
         // Turn on red LED
-        GPIO_ResetBits(GPIOA, STATUS_R_PIN);
-        // Keep green and blue off
-        GPIO_SetBits(GPIOA, STATUS_G_PIN);
-        GPIO_SetBits(GPIOA, STATUS_B_PIN);
+        GPIO_ResetBits(GPIOC, GPIO_Pin_15);
+//        // Keep green and blue off
+        GPIO_SetBits(GPIOC, STATUS_G_PIN);
+        GPIO_SetBits(GPIOC, STATUS_B_PIN);
         Delay(1000);
         
         // Turn on green LED
-        GPIO_ResetBits(GPIOA, STATUS_G_PIN);     
+        GPIO_ResetBits(GPIOC, STATUS_G_PIN);     
         // Keep red and blue off
-        GPIO_SetBits(GPIOA, STATUS_R_PIN);
-        GPIO_SetBits(GPIOA, STATUS_B_PIN);
+        GPIO_SetBits(GPIOC, STATUS_R_PIN);
+        GPIO_SetBits(GPIOC, STATUS_B_PIN);
         Delay(1000);
         
         // Turn on blue LED
-        GPIO_ResetBits(GPIOA, STATUS_B_PIN);
+        GPIO_ResetBits(GPIOC, STATUS_B_PIN);
         // Keep green and red off
-        GPIO_SetBits(GPIOA, STATUS_R_PIN);
-        GPIO_SetBits(GPIOA, STATUS_G_PIN);
+        GPIO_SetBits(GPIOC, STATUS_R_PIN);
+        GPIO_SetBits(GPIOC, STATUS_G_PIN);
         Delay(1000);
     }
 }

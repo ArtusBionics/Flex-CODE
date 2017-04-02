@@ -18,10 +18,14 @@ void ConfigureGPIO(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct;																		//GPIO init structure
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE); 				    //Enable clock to GPIOA pins
-	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE); 					//Enable clock to GPIOB pins
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE); 						//Enable clock to GPIOB pins
+		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE) ;					//Enable clock to GPIOC pins
+		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOD, ENABLE) ;					//Enable clock to GPIOD pins
 	
   GPIO_DeInit(GPIOA);
 	GPIO_DeInit(GPIOB);
+	GPIO_DeInit(GPIOC);
+	GPIO_DeInit(GPIOD);
     
   // Configure Status LEDs: output mode, open drain, 2MHz frequency 
  	GPIO_InitStruct.GPIO_Pin = STATUS_R_PIN | STATUS_G_PIN | STATUS_B_PIN;
@@ -32,9 +36,9 @@ void ConfigureGPIO(void)
  	GPIO_Init(GPIOC, &GPIO_InitStruct);
  	
  	// Initialize status LED to be OFF
- 	GPIO_WriteBit(GPIOA, STATUS_B_PIN, Bit_SET);
- 	GPIO_WriteBit(GPIOA, STATUS_R_PIN, Bit_SET);
- 	GPIO_WriteBit(GPIOA, STATUS_G_PIN, Bit_SET);
+ 	GPIO_WriteBit(GPIOC, STATUS_B_PIN, Bit_SET);
+ 	GPIO_WriteBit(GPIOC, STATUS_R_PIN, Bit_SET);
+ 	GPIO_WriteBit(GPIOC, STATUS_G_PIN, Bit_SET);
 	
 	// Configure Fans: output mode, push-pull, 2MHz frequency
 	GPIO_InitStruct.GPIO_Pin = FAN_1 | FAN_2;
