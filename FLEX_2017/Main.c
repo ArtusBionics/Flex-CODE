@@ -48,7 +48,7 @@ NVIC_InitTypeDef   NVIC_InitStructure;
 
 // Function Prototypes
 void ConfigureEXTI17(void);
-static void TIM_Config(void);
+//static void TIM_Config(void);
 void TIM1_CC_IRQHandler(void);
 void Test_RGBLED(void);
 //void Test_ADC(void);
@@ -377,10 +377,10 @@ void Test_ADC(void)
 void Test_Buttons(void) {
 	while(1)
 	{
-		//Button_1_Status = GPIO_ReadInputDataBit(GPIOC, BUTTON_1);
+		Button_1_Status = GPIO_ReadInputDataBit(GPIOC, BUTTON_1);
 		Button_2_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_2);
 	  Button_3_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_3);
-		Button_4_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_4);
+		//Button_4_Status = GPIO_ReadInputDataBit(GPIOA, BUTTON_4);
 		
 		if (Button_1_Status + Button_2_Status + Button_3_Status + Button_4_Status != 1) {
 			//Turn off all LEDs

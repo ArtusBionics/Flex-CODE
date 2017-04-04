@@ -2,7 +2,7 @@
 #ifndef GPIO_H_INCLUDED
 #define GPIO_H_INCLUDED
 
-//Pin assignments for FSM_2017
+//Pin assignments for FLEX_2017
 
 //Status LEDs (GPIOC)
 #define STATUS_R_PIN					GPIO_Pin_15
@@ -50,35 +50,37 @@
 #define MIDDLE_EXT_3					GPIO_Pin_9
 
 //RING -- 4 (GPIOA)
-#define RING_FLEX_1					GPIO_Pin_10
-#define RING_EXT_1					GPIO_Pin_11
-#define RING_FLEX_2					GPIO_Pin_12
+//#define RING_FLEX_1					GPIO_Pin_10
+//#define RING_EXT_1					GPIO_Pin_11
+//#define RING_FLEX_2					GPIO_Pin_12
+#define RING_FLEX							GPIO_Pin_12
+#define RING_EXT							GPIO_Pin_15
+/* Short pins together */
 
 //RING -- 4 (GPIOF)
-#define RING_EXT_2					GPIO_Pin_6
-#define RING_FLEX_3					GPIO_Pin_7
-#define RING_EXT_3
-
-//RING -- 4 (GPIOA)					
-#define RING_AB							GPIO_Pin_15
+//#define RING_EXT_2					GPIO_Pin_6
+//#define RING_FLEX_3					GPIO_Pin_7
+//#define RING_EXT_3
+#define RING_AB								GPIO_Pin_6
+			
 
 //RING -- 4 (GPIOC)
-#define RING_AD							GPIO_Pin_10
+#define RING_AD								GPIO_Pin_10
 
 //PINKY -- 5 (GPIOC)
-#define PINKY_FLEX_1				GPIO_Pin_11
-#define PINKY_EXT_1					GPIO_Pin_12
+//#define PINKY_FLEX_1				GPIO_Pin_11
+//#define PINKY_EXT_1					GPIO_Pin_12
 
 //PINKY -- 5 (GPIOD)
-#define PINKY_FLEX_2				GPIO_Pin_2
+#define PINKY_FLEX					GPIO_Pin_2
 
 //PINKY -- 5 (GPIOB)
-#define PINKY_EXT_2					GPIO_Pin_3
-#define PINKY_FLEX_3				GPIO_Pin_4
-#define PINKY_EXT_3					GPIO_Pin_5
-#define PINKY_AD						GPIO_Pin_6
+#define PINKY_AD						GPIO_Pin_3
+//#define PINKY_FLEX_3			GPIO_Pin_4
+//#define PINKY_EXT_3				GPIO_Pin_5
+#define PINKY_EXT						GPIO_Pin_6
 #define PINKY_AB						GPIO_Pin_7
-
+	
 //Battery Monitoring
 #define BATTERY_STATUS			GPIO_Pin_3
 

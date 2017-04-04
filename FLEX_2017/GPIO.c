@@ -19,8 +19,8 @@ void ConfigureGPIO(void)
   GPIO_InitTypeDef GPIO_InitStruct;																		//GPIO init structure
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE); 				    //Enable clock to GPIOA pins
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE); 						//Enable clock to GPIOB pins
-		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE) ;					//Enable clock to GPIOC pins
-		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOD, ENABLE) ;					//Enable clock to GPIOD pins
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE) ;					//Enable clock to GPIOC pins
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOD, ENABLE) ;					//Enable clock to GPIOD pins
 	
   GPIO_DeInit(GPIOA);
 	GPIO_DeInit(GPIOB);
@@ -144,27 +144,24 @@ void ConfigureGPIO(void)
 	
 	//Configure Ring: Output mode, push-pull, 2MHz frequency
 	//GPIOA
-	GPIO_InitStruct.GPIO_Pin = RING_FLEX_1 | RING_EXT_1 | RING_FLEX_2 | RING_AB;
+	GPIO_InitStruct.GPIO_Pin = RING_FLEX | RING_EXT;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStruct);
 	//Initialize Ring GPIOA to be OFF
-	GPIO_WriteBit(GPIOA, RING_FLEX_1, Bit_RESET);
-	GPIO_WriteBit(GPIOA, RING_EXT_1, Bit_RESET);
-	GPIO_WriteBit(GPIOA, RING_FLEX_2, Bit_RESET);
-	GPIO_WriteBit(GPIOA, RING_AB, Bit_RESET);
+	GPIO_WriteBit(GPIOA, RING_FLEX, Bit_RESET);
+	GPIO_WriteBit(GPIOA, RING_EXT, Bit_RESET);
 	//GPIOF
-	GPIO_InitStruct.GPIO_Pin = RING_EXT_2 | RING_FLEX_3;
+	GPIO_InitStruct.GPIO_Pin = RING_AB;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOF, &GPIO_InitStruct);
 	//Initialize Ring GPIOF to be OFF
-	GPIO_WriteBit(GPIOF, RING_EXT_2, Bit_RESET);	
-	GPIO_WriteBit(GPIOF, RING_FLEX_3, Bit_RESET);
+	GPIO_WriteBit(GPIOF, RING_AB, Bit_RESET);	
 	//GPIOC
 	GPIO_InitStruct.GPIO_Pin = RING_AD;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -173,44 +170,31 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOC, &GPIO_InitStruct);
 	//Initialize Ring GPIOC to be OFF
-	GPIO_WriteBit(GPIOA, RING_AD, Bit_RESET);
+	GPIO_WriteBit(GPIOC, RING_AD, Bit_RESET);
 
 	
 	//Configure Pinky: output mode, push-pull, 2MHz frequency
-	//GPIOC
-	GPIO_InitStruct.GPIO_Pin = PINKY_FLEX_1 | PINKY_EXT_1;
-	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-	GPIO_Init(GPIOC, &GPIO_InitStruct);
-	//Initialize Pinky GPIOC to be OFF
-	GPIO_WriteBit(GPIOA, PINKY_FLEX_1, Bit_RESET);
-	GPIO_WriteBit(GPIOA, PINKY_EXT_1, Bit_RESET);
 	//GPIOD
-	GPIO_InitStruct.GPIO_Pin = PINKY_FLEX_2;
+	GPIO_InitStruct.GPIO_Pin = PINKY_FLEX;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOD, &GPIO_InitStruct);
 	//Intialize Pinky GPIOD to be OFF
-	GPIO_WriteBit(GPIOA, PINKY_FLEX_2, Bit_RESET);
+	GPIO_WriteBit(GPIOA, PINKY_FLEX, Bit_RESET);
 	//GPIOB
-	GPIO_InitStruct.GPIO_Pin = PINKY_EXT_2 | PINKY_FLEX_3 | PINKY_EXT_3 | PINKY_AD | PINKY_AB;
+	GPIO_InitStruct.GPIO_Pin = PINKY_EXT | PINKY_AD | PINKY_AB;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
 	//Intialize Pinky GPIOB to be OFF
-	GPIO_WriteBit(GPIOB, PINKY_EXT_2, Bit_RESET);
-	GPIO_WriteBit(GPIOB, PINKY_FLEX_3, Bit_RESET);
-	GPIO_WriteBit(GPIOB, PINKY_EXT_3, Bit_RESET);
+	GPIO_WriteBit(GPIOB, PINKY_EXT, Bit_RESET);
 	GPIO_WriteBit(GPIOB, PINKY_AD, Bit_RESET);
 	GPIO_WriteBit(GPIOB, PINKY_AB, Bit_RESET);
 
-	
 	//Configure Battery Status Monitor: Input mode, push-pull, 2MHz frequency
 	GPIO_InitStruct.GPIO_Pin = BATTERY_STATUS;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
@@ -234,60 +218,6 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStruct);
-	
-	
- 	
- 	// Configure Primary Encoder Pins on TIM2: alternate function, push-pull, 2MHz frequency
-// 	GPIO_InitStruct.GPIO_Pin = PRIM_APPS_A_PIN	 | PRIM_APPS_B_PIN	;
-//    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
-//    GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-//    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-//    GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-//    GPIO_Init(GPIOA, &GPIO_InitStruct);
-// 	
-// 	GPIO_PinAFConfig(GPIOA, PRIM_APPS_A_PINSOURCE, GPIO_AF_2);
-// 	GPIO_PinAFConfig(GPIOA, PRIM_APPS_B_PINSOURCE, GPIO_AF_2);
-
-
-//    // Configure Hall Effect Pins on TIM16/17 (WHEELS): alternate function, 2MHz, push-pull
-////    GPIO_InitStruct.GPIO_Pin =  RIGHT_WHEEL_SPEED_PIN;
-////    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
-////    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-////    GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-////    GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-////    GPIO_Init(GPIOA, &GPIO_InitStruct);
-//    
-////    GPIO_InitStruct.GPIO_Pin =  LEFT_WHEEL_SPEED_PIN;
-////    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
-////    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-////    GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-////    GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-////    GPIO_Init(GPIOA, &GPIO_InitStruct);   
-//    
-////    GPIO_PinAFConfig(GPIOA, RIGHT_WHEEL_PINSOURCE, GPIO_AF_2);					// Connect TIM16 pins to AF2
-////    GPIO_PinAFConfig(GPIOA, LEFT_WHEEL_PINSOURCE, GPIO_AF_2);					// Connect TIM17 pins to AF2
-
-//    // Configure Brake Input Pin: input mode, push-pull, 2MHz frequency
-// 	GPIO_InitStruct.GPIO_Pin = BRAKE_IN_PIN;
-//    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
-//    GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-//    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-//    GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
-//    GPIO_Init(GPIOA, &GPIO_InitStruct);
-// 
-//    // Configure ADC Pins: analog input mode, no pull up or pull down
-// 	GPIO_InitStruct.GPIO_Pin = STEERING_ANGLE_PIN ;
-//    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AN;
-//    GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL ;
-//    GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-//    //Configure GPIO pins for CAN
-//    //GPIO_InitStruct.GPIO_Pin = CAN_TX | CAN_RX;
-//    //GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;                                        
-//    //GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;                            
-//    //GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
-//    //GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-//    //GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
 
