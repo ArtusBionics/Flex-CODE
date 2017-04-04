@@ -48,6 +48,10 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOC, &GPIO_InitStruct);
 	
+	// Initialize Fans to be OFF
+	GPIO_WriteBit(GPIOC, FAN_1, Bit_SET);
+	GPIO_WriteBit(GPIOC, FAN_1, Bit_SET);
+	
 	// Configure Thumb: output mode, push-pull, 2MHz frequency 
 	//GPIOF Ports
 	GPIO_InitStruct.GPIO_Pin = THUMB_FLEX_1;
@@ -56,6 +60,8 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOF, &GPIO_InitStruct);
+	//Initialize Thumb GPIOF to be OFF
+	GPIO_WriteBit(GPIOF, THUMB_FLEX_1, Bit_RESET);
 	//GPIOA Ports
 	GPIO_InitStruct.GPIO_Pin = THUMB_EXT_1 | THUMB_FLEX_2 | THUMB_EXT_2 | THUMB_FLEX_3;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -63,6 +69,11 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStruct);
+	//Initialize Thumb GPIOA to be OFF
+	GPIO_WriteBit(GPIOA, THUMB_EXT_1, Bit_RESET);
+	GPIO_WriteBit(GPIOA, THUMB_FLEX_2, Bit_RESET);
+	GPIO_WriteBit(GPIOA, THUMB_EXT_2, Bit_RESET);
+	GPIO_WriteBit(GPIOA, THUMB_FLEX_3, Bit_RESET);
 	//GPIOC PORTS
 	GPIO_InitStruct.GPIO_Pin = THUMB_EXT_3 | THUMB_AB;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -70,6 +81,9 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOC, &GPIO_InitStruct);
+	//Initialize Thumb GPIOC to be OFF
+	GPIO_WriteBit(GPIOC, THUMB_EXT_3, Bit_RESET);
+	GPIO_WriteBit(GPIOC, THUMB_AB, Bit_RESET);
 	//GPIOB PORTS
 	GPIO_InitStruct.GPIO_Pin = THUMB_AD;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -77,6 +91,8 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
+	//Initialize Thumb to be GPIOB OFF
+	GPIO_WriteBit(GPIOB, THUMB_AD, Bit_RESET);
 	
 	//Configure Index: Output mode, push-pull, 2 MHz frequency
 	//GPIOB
@@ -86,6 +102,19 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
+	//Initialize Index GPIOB to be OFF
+	GPIO_WriteBit(GPIOB, INDEX_AB, Bit_RESET);
+	GPIO_WriteBit(GPIOB, INDEX_AD, Bit_RESET);
+	GPIO_WriteBit(GPIOB, INDEX_EXT_1, Bit_RESET);
+	GPIO_WriteBit(GPIOB, INDEX_EXT_2, Bit_RESET);
+	GPIO_WriteBit(GPIOB, INDEX_EXT_3, Bit_RESET);
+	GPIO_WriteBit(GPIOB, INDEX_FLEX_1, Bit_RESET);
+	GPIO_WriteBit(GPIOB, INDEX_FLEX_2, Bit_RESET);
+	GPIO_WriteBit(GPIOB, INDEX_FLEX_3, Bit_RESET);
+
+
+
+
 	
 	//Configure Middle: Output mode, push-pull, 2MHz frequency
 	//GPIOC
@@ -95,6 +124,11 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOC, &GPIO_InitStruct);
+	//Initialize Middle GPIOC to be OFF
+	GPIO_WriteBit(GPIOC, MIDDLE_FLEX_1, Bit_RESET);
+	GPIO_WriteBit(GPIOC, MIDDLE_EXT_1, Bit_RESET);
+	GPIO_WriteBit(GPIOC, MIDDLE_FLEX_2, Bit_RESET);
+	GPIO_WriteBit(GPIOC, MIDDLE_EXT_2, Bit_RESET);
 	//GPIOA
 	GPIO_InitStruct.GPIO_Pin = MIDDLE_FLEX_3 | MIDDLE_EXT_3;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -102,6 +136,11 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStruct);
+	//Initialize Middle GPIOA to be OFF
+	GPIO_WriteBit(GPIOA, MIDDLE_FLEX_3, Bit_RESET);
+	GPIO_WriteBit(GPIOA, MIDDLE_EXT_3, Bit_RESET);
+
+
 	
 	//Configure Ring: Output mode, push-pull, 2MHz frequency
 	//GPIOA
@@ -111,6 +150,11 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStruct);
+	//Initialize Ring GPIOA to be OFF
+	GPIO_WriteBit(GPIOA, RING_FLEX_1, Bit_RESET);
+	GPIO_WriteBit(GPIOA, RING_EXT_1, Bit_RESET);
+	GPIO_WriteBit(GPIOA, RING_FLEX_2, Bit_RESET);
+	GPIO_WriteBit(GPIOA, RING_AB, Bit_RESET);
 	//GPIOF
 	GPIO_InitStruct.GPIO_Pin = RING_EXT_2 | RING_FLEX_3;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -118,6 +162,9 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOF, &GPIO_InitStruct);
+	//Initialize Ring GPIOF to be OFF
+	GPIO_WriteBit(GPIOF, RING_EXT_2, Bit_RESET);	
+	GPIO_WriteBit(GPIOF, RING_FLEX_3, Bit_RESET);
 	//GPIOC
 	GPIO_InitStruct.GPIO_Pin = RING_AD;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -125,6 +172,9 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOC, &GPIO_InitStruct);
+	//Initialize Ring GPIOC to be OFF
+	GPIO_WriteBit(GPIOA, RING_AD, Bit_RESET);
+
 	
 	//Configure Pinky: output mode, push-pull, 2MHz frequency
 	//GPIOC
@@ -133,7 +183,10 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-	GPIO_Init(GPIOF, &GPIO_InitStruct);
+	GPIO_Init(GPIOC, &GPIO_InitStruct);
+	//Initialize Pinky GPIOC to be OFF
+	GPIO_WriteBit(GPIOA, PINKY_FLEX_1, Bit_RESET);
+	GPIO_WriteBit(GPIOA, PINKY_EXT_1, Bit_RESET);
 	//GPIOD
 	GPIO_InitStruct.GPIO_Pin = PINKY_FLEX_2;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -141,6 +194,8 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOD, &GPIO_InitStruct);
+	//Intialize Pinky GPIOD to be OFF
+	GPIO_WriteBit(GPIOA, PINKY_FLEX_2, Bit_RESET);
 	//GPIOB
 	GPIO_InitStruct.GPIO_Pin = PINKY_EXT_2 | PINKY_FLEX_3 | PINKY_EXT_3 | PINKY_AD | PINKY_AB;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
@@ -148,6 +203,13 @@ void ConfigureGPIO(void)
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
+	//Intialize Pinky GPIOB to be OFF
+	GPIO_WriteBit(GPIOB, PINKY_EXT_2, Bit_RESET);
+	GPIO_WriteBit(GPIOB, PINKY_FLEX_3, Bit_RESET);
+	GPIO_WriteBit(GPIOB, PINKY_EXT_3, Bit_RESET);
+	GPIO_WriteBit(GPIOB, PINKY_AD, Bit_RESET);
+	GPIO_WriteBit(GPIOB, PINKY_AB, Bit_RESET);
+
 	
 	//Configure Battery Status Monitor: Input mode, push-pull, 2MHz frequency
 	GPIO_InitStruct.GPIO_Pin = BATTERY_STATUS;
