@@ -14,6 +14,7 @@
 #include "Timers.h" 
 #include "Interrupt.h"
 #include "EXTI.h"
+#include "Configurations.h"
 
 // Constants
 
@@ -55,10 +56,6 @@ void Test_RGBLED(void);
 //void Test_BrakeSwitch(void);
 //void Test_Primary_Encoder(void);
 void Test_Buttons(void);
-void Fist(void);
-void Artus(void);
-void Test_Positions(void);
-void High_Five(void);
 
 /**
 * @brief  Main program.
@@ -448,124 +445,6 @@ void Test_Positions(void){
 	}
 }
 
-void Fist(void){
-	// actuate all flexors
-	GPIO_SetBits(GPIOF, THUMB_FLEX_1);
-	GPIO_SetBits(GPIOA, THUMB_FLEX_2);
-	GPIO_SetBits(GPIOA, THUMB_FLEX_3);
-	
-	GPIO_SetBits(GPIOB, INDEX_FLEX_1);
-	GPIO_SetBits(GPIOB, INDEX_FLEX_2);
-	GPIO_SetBits(GPIOB, INDEX_FLEX_3);
-	
-	GPIO_SetBits(GPIOC, MIDDLE_FLEX_1);
-	GPIO_SetBits(GPIOC, MIDDLE_FLEX_2);
-	GPIO_SetBits(GPIOA, MIDDLE_FLEX_3);
-	
-	GPIO_SetBits(GPIOA, RING_FLEX_1);
-	GPIO_SetBits(GPIOA, RING_FLEX_2);
-	GPIO_SetBits(GPIOF, RING_FLEX_3);
-	
-	GPIO_SetBits(GPIOF, PINKY_FLEX_1);
-	GPIO_SetBits(GPIOD, PINKY_FLEX_2);
-	GPIO_SetBits(GPIOB, PINKY_FLEX_3);
-	
-	Delay(3000);
-	
-	// turn off flexors
-	GPIO_ResetBits(GPIOF, THUMB_FLEX_1);
-	GPIO_ResetBits(GPIOA, THUMB_FLEX_2);
-	GPIO_ResetBits(GPIOA, THUMB_FLEX_3);
-	
-	GPIO_ResetBits(GPIOB, INDEX_FLEX_1);
-	GPIO_ResetBits(GPIOB, INDEX_FLEX_2);
-	GPIO_ResetBits(GPIOB, INDEX_FLEX_3);
-	
-	GPIO_ResetBits(GPIOC, MIDDLE_FLEX_1);
-	GPIO_ResetBits(GPIOC, MIDDLE_FLEX_2);
-	GPIO_ResetBits(GPIOA, MIDDLE_FLEX_3);
-	
-	GPIO_ResetBits(GPIOA, RING_FLEX_1);
-	GPIO_ResetBits(GPIOA, RING_FLEX_2);
-	GPIO_ResetBits(GPIOF, RING_FLEX_3);
-	
-	GPIO_ResetBits(GPIOF, PINKY_FLEX_1);
-	GPIO_ResetBits(GPIOD, PINKY_FLEX_2);
-	GPIO_ResetBits(GPIOB, PINKY_FLEX_3);
-}
 
-void Artus(void){
-	// curl index finger
-	GPIO_SetBits(GPIOB, INDEX_FLEX_1);
-	GPIO_SetBits(GPIOB, INDEX_FLEX_2);
-	GPIO_SetBits(GPIOB, INDEX_FLEX_3);
-	
-	// curl thumb
-	GPIO_SetBits(GPIOF, THUMB_FLEX_1);
-	GPIO_SetBits(GPIOA, THUMB_FLEX_2);
-	GPIO_SetBits(GPIOA, THUMB_FLEX_3);
-	GPIO_SetBits(GPIOB, THUMB_AD);
-	
-	Delay(3000);
-	
-	// turn off
-	GPIO_ResetBits(GPIOB, INDEX_FLEX_1);
-	GPIO_ResetBits(GPIOB, INDEX_FLEX_2);
-	GPIO_ResetBits(GPIOB, INDEX_FLEX_3);
-	
-	GPIO_ResetBits(GPIOF, THUMB_FLEX_1);
-	GPIO_ResetBits(GPIOA, THUMB_FLEX_2);
-	GPIO_ResetBits(GPIOA, THUMB_FLEX_3);
-	GPIO_ResetBits(GPIOB, THUMB_AD);
-}
 
-void High_Five(void){
-	// set all extensors and abductors
-	GPIO_SetBits(GPIOA, THUMB_EXT_1);
-	GPIO_SetBits(GPIOA, THUMB_EXT_2);
-	GPIO_SetBits(GPIOC, THUMB_EXT_3);
-	GPIO_SetBits(GPIOC, THUMB_AB);
-	
-	GPIO_SetBits(GPIOB, INDEX_AB);
-	GPIO_SetBits(GPIOB, INDEX_EXT_1);
-	GPIO_SetBits(GPIOB, INDEX_EXT_2);
-	GPIO_SetBits(GPIOB, INDEX_EXT_3);
-	
-	GPIO_SetBits(GPIOC, MIDDLE_EXT_1);
-	GPIO_SetBits(GPIOC, MIDDLE_EXT_2);
-	GPIO_SetBits(GPIOA, MIDDLE_EXT_3);
-	
-	GPIO_SetBits(GPIOA, RING_EXT_1);
-	GPIO_SetBits(GPIOF, RING_EXT_2);
-	
-	GPIO_SetBits(GPIOF, PINKY_EXT_1);
-	GPIO_SetBits(GPIOB, PINKY_EXT_2);
-	GPIO_SetBits(GPIOB, PINKY_EXT_3);
-	GPIO_SetBits(GPIOB, PINKY_AB);
-	
-	Delay(3000);
-	
-	GPIO_ResetBits(GPIOA, THUMB_EXT_1);
-	GPIO_ResetBits(GPIOA, THUMB_EXT_2);
-	GPIO_ResetBits(GPIOC, THUMB_EXT_3);
-	GPIO_ResetBits(GPIOC, THUMB_AB);
-	
-	GPIO_ResetBits(GPIOB, INDEX_AB);
-	GPIO_ResetBits(GPIOB, INDEX_EXT_1);
-	GPIO_ResetBits(GPIOB, INDEX_EXT_2);
-	GPIO_ResetBits(GPIOB, INDEX_EXT_3);
-	
-	GPIO_ResetBits(GPIOC, MIDDLE_EXT_1);
-	GPIO_ResetBits(GPIOC, MIDDLE_EXT_2);
-	GPIO_ResetBits(GPIOA, MIDDLE_EXT_3);
-	
-	GPIO_ResetBits(GPIOA, RING_EXT_1);
-	GPIO_ResetBits(GPIOF, RING_EXT_2);
-	
-	GPIO_ResetBits(GPIOF, PINKY_EXT_1);
-	GPIO_ResetBits(GPIOB, PINKY_EXT_2);
-	GPIO_ResetBits(GPIOB, PINKY_EXT_3);
-	GPIO_ResetBits(GPIOB, PINKY_AB);
-	
-}
 

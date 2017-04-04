@@ -5,6 +5,10 @@
 //Function Declarations
 void fullFingerContraction (void);
 void fukOffM8 (void);
+void Fist(void);
+void Artus(void);
+void Test_Positions(void);
+void High_Five(void);
 
 
 #endif
