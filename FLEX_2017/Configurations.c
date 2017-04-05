@@ -11,15 +11,16 @@
 #include "Configurations.h"
 #include "SysTick.h"
 
+
+//Variables
+volatile uint16_t delayTime = 750;								// Shuts off current driver after actuation
+volatile uint16_t coolOffTime = 4000;							// Delays function moving on to the next so wires can cool off
+
 /**
     @brief      Fully contracts fingers, actuates all flexor tendons
     @param      None
     @return     None
 */
-void fullFingerContraction (void) {
-	//Contract all fingers in GPIOA
-	GPIO_SetBits(GPIOA, THUMB_EXT_1);
-}
 
 void Fist(void){
 	// actuate all flexors
@@ -39,7 +40,7 @@ void Fist(void){
 	
 	GPIO_SetBits(GPIOF, PINKY_FLEX);
 
-	Delay(750);
+	Delay(delayTime);
 	
 	// turn off flexors
 	GPIO_ResetBits(GPIOF, THUMB_FLEX_1);
@@ -57,8 +58,16 @@ void Fist(void){
 	GPIO_ResetBits(GPIOA, RING_FLEX);
 	
 	GPIO_ResetBits(GPIOF, PINKY_FLEX);
+	
+	Delay(coolOffTime);
 
 }
+
+/**
+    @brief      Curls thumb and index finger, extends all others
+    @param      None
+    @return     None
+*/
 
 void Artus(void){
 	// curl index finger
@@ -72,7 +81,17 @@ void Artus(void){
 	GPIO_SetBits(GPIOA, THUMB_FLEX_3);
 	GPIO_SetBits(GPIOB, THUMB_AD);
 	
-	Delay(750);
+	//Extend other fingers
+	GPIO_SetBits(GPIOC, MIDDLE_EXT_1);
+	GPIO_SetBits(GPIOC, MIDDLE_EXT_2);
+	GPIO_SetBits(GPIOA, MIDDLE_EXT_3);
+	
+	GPIO_SetBits(GPIOA, RING_EXT);
+	
+	GPIO_SetBits(GPIOB, PINKY_EXT);
+	GPIO_SetBits(GPIOB, PINKY_AB);
+	
+	Delay(delayTime);
 	
 	// turn off
 	GPIO_ResetBits(GPIOB, INDEX_FLEX_1);
@@ -83,7 +102,24 @@ void Artus(void){
 	GPIO_ResetBits(GPIOA, THUMB_FLEX_2);
 	GPIO_ResetBits(GPIOA, THUMB_FLEX_3);
 	GPIO_ResetBits(GPIOB, THUMB_AD);
+	
+	GPIO_ResetBits(GPIOC, MIDDLE_EXT_1);
+	GPIO_ResetBits(GPIOC, MIDDLE_EXT_2);
+	GPIO_ResetBits(GPIOA, MIDDLE_EXT_3);
+	
+	GPIO_ResetBits(GPIOA, RING_EXT);
+	
+	GPIO_ResetBits(GPIOB, PINKY_EXT);
+	GPIO_ResetBits(GPIOB, PINKY_AB);
+	
+	Delay(coolOffTime);
 }
+
+/**
+    @brief      Extends and abducts all fingers to make a flat "High Five" 
+    @param      None
+    @return     None
+*/
 
 void High_Five(void){
 	// set all extensors and abductors
@@ -107,7 +143,7 @@ void High_Five(void){
 	GPIO_SetBits(GPIOB, PINKY_AB);
 
 	
-	Delay(750);
+	Delay(delayTime);
 	
 	GPIO_ResetBits(GPIOA, THUMB_EXT_1);
 	GPIO_ResetBits(GPIOA, THUMB_EXT_2);
@@ -127,4 +163,60 @@ void High_Five(void){
 	
 	GPIO_ResetBits(GPIOB, PINKY_EXT);
 	GPIO_ResetBits(GPIOB, PINKY_AB);
+	
+	Delay(coolOffTime);
+}
+
+/**
+    @brief      Pretty self explanatory
+    @param      None
+    @return     None
+*/
+
+void fukOffM8 (void) {
+	GPIO_SetBits(GPIOF, THUMB_FLEX_1);
+	GPIO_SetBits(GPIOA, THUMB_FLEX_2);
+	GPIO_SetBits(GPIOA, THUMB_FLEX_3);
+	
+	GPIO_SetBits(GPIOB, INDEX_FLEX_1);
+	GPIO_SetBits(GPIOB, INDEX_FLEX_2);
+	GPIO_SetBits(GPIOB, INDEX_FLEX_3);
+	
+	GPIO_SetBits(GPIOA, RING_FLEX);
+	
+	GPIO_SetBits(GPIOF, PINKY_FLEX);
+
+	Delay(delayTime);
+	
+	// turn off flexors
+	GPIO_ResetBits(GPIOF, THUMB_FLEX_1);
+	GPIO_ResetBits(GPIOA, THUMB_FLEX_2);
+	GPIO_ResetBits(GPIOA, THUMB_FLEX_3);
+	
+	GPIO_ResetBits(GPIOB, INDEX_FLEX_1);
+	GPIO_ResetBits(GPIOB, INDEX_FLEX_2);
+	GPIO_ResetBits(GPIOB, INDEX_FLEX_3);
+	
+	GPIO_ResetBits(GPIOC, MIDDLE_FLEX_1);
+	GPIO_ResetBits(GPIOC, MIDDLE_FLEX_2);
+	GPIO_ResetBits(GPIOA, MIDDLE_FLEX_3);
+	
+	GPIO_ResetBits(GPIOA, RING_FLEX);
+	
+	GPIO_ResetBits(GPIOF, PINKY_FLEX);
+	
+	//Extend middle finger
+	GPIO_SetBits(GPIOC, MIDDLE_EXT_1);
+	GPIO_SetBits(GPIOC, MIDDLE_EXT_2);
+	GPIO_SetBits(GPIOA, MIDDLE_EXT_3);
+	
+	Delay(delayTime);
+	
+	//Turn off middle finger extendors
+	GPIO_ResetBits(GPIOC, MIDDLE_EXT_1);
+	GPIO_ResetBits(GPIOC, MIDDLE_EXT_2);
+	GPIO_ResetBits(GPIOA, MIDDLE_EXT_3);
+	
+	Delay(coolOffTime);
+	
 }

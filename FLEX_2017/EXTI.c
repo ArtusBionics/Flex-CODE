@@ -33,7 +33,7 @@ void EXTI0_Config(void)
 	
 	/* Enable SYSCFG clock */
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-	/* Connect EXTI3 Line to Button 1 Pin */
+	/* Connect EXTI0 Line to Button 2 Pin */
 	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource0);
 	
 	/* Configure EXTI0 line */

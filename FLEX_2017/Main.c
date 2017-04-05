@@ -66,7 +66,7 @@ int main(void)
 {
 	ConfigureGPIO();
 	ConfigureSysTick();
-	EXTI0_Config();
+	//EXTI0_Config();  											//When uncommenting, comment out GPIO.c set up of Button 2
 	
 	//ConfigureADC();
  // ConfigureTIM();

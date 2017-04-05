@@ -10,5 +10,6 @@ void Artus(void);
 void Test_Positions(void);
 void High_Five(void);
 
+//Variable Declarations
 
 #endif
